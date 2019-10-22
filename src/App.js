@@ -1,10 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import { getAllArtist } from './actions/artistAction';
 import Home from './components/Home';
+import Album from './components/Album';
 
 import store from './store';
 
@@ -29,11 +29,7 @@ const App = () =>{
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={Home} />
-          {/* <Route path="/login" component={Login} />
-          <Route path="/signup" component={Signup} />
-          <Route path="/profile" component={Profile} />
-          <Route path="/offices" component={Offices} />
-          <Route path="/forgotpassword" component={ForgotPassword} /> */}
+          <Route exact path="/artist/:id" component={Album} />
         </Switch>
       </BrowserRouter>
       <ToastContainer/>
