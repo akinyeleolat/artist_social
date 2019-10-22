@@ -4,6 +4,7 @@ import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import { getAllArtist } from './actions/artistAction';
+import Home from './components/Home';
 
 import store from './store';
 
@@ -25,17 +26,16 @@ toast.configure({
 const App = () =>{
   return (
     <Provider store={store}>
-      {/* <BrowserRouter>
+      <BrowserRouter>
         <Switch>
-          <Route exact path="/" component={Layout} />
-          <Route path="/login" component={Login} />
+          <Route exact path="/" component={Home} />
+          {/* <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
           <Route path="/profile" component={Profile} />
           <Route path="/offices" component={Offices} />
-          <Route path="/forgotpassword" component={ForgotPassword} />
+          <Route path="/forgotpassword" component={ForgotPassword} /> */}
         </Switch>
-      </BrowserRouter> */}
-      {/* <FlashMessagesList/> */}
+      </BrowserRouter>
       <ToastContainer/>
     </Provider>
         );
