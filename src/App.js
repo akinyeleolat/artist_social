@@ -1,26 +1,44 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ReactDOM from 'react-dom';
+import { Route, BrowserRouter, Switch } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
-function App() {
+import { getAllArtist } from './actions/artistAction';
+
+import store from './store';
+
+import 'react-toastify/dist/ReactToastify.css';
+import { toast, ToastContainer } from 'react-toastify';
+
+import './index.css';
+
+
+store.dispatch(getAllArtist());
+
+toast.configure({
+  autoClose: 2000,
+  draggable: false,
+})
+
+
+
+const App = () =>{
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Provider store={store}>
+      {/* <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={Layout} />
+          <Route path="/login" component={Login} />
+          <Route path="/signup" component={Signup} />
+          <Route path="/profile" component={Profile} />
+          <Route path="/offices" component={Offices} />
+          <Route path="/forgotpassword" component={ForgotPassword} />
+        </Switch>
+      </BrowserRouter> */}
+      {/* <FlashMessagesList/> */}
+      <ToastContainer/>
+    </Provider>
+        );
 }
 
 export default App;

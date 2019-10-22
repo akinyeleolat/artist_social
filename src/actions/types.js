@@ -1,0 +1,6 @@
+export const FETCH_ALL_ARTIST = 'FETCH_ALL_ARTIST';
+export const FETCH_ARTIST_ALBUM = 'FETCH_ARTIST_ALBUM';
+export const FETCH_ALL_ARTIST_TWEET = 'FETCH_ALL_ARTIST_TWEET';
+export const ADD_TWEET = 'ADD_TWEET';
+export const EDIT_TWEET = 'EDIT_TWEET';
+export const DELETE_TWEET = 'DELETE_TWEET';
